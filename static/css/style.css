@@ -1,0 +1,104 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: white;
+  padding: 20px 40px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+.logo span {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.tagline {
+  font-size: 14px;
+  color: #666;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+.donate-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+.btn {
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.primary {
+  background-color: #00bfff;
+  color: white;
+}
+.secondary {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: #f1f1f1;
+  padding: 20px 0;
+  text-align: center;
+}
