@@ -1,0 +1,25 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8001:5000"
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: edu_web
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
