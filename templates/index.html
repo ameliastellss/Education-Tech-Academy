@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/static/logo.png" type="image/png" />
+    <title>Edu Tech Academy</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: #282a35;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar h1 {
+        margin: 0;
+        font-size: 22px;
+        color: #04aa6d;
+        font-weight: bold;
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+      }
+
+      .navbar li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+
+      .navbar li a:hover {
+        color: #04aa6d;
+      }
+
+      .login-btn a {
+        text-decoration: none;
+        background-color: #04aa6d;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #04aa6d, #028a58);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      .hero h2 {
+        font-size: 48px;
+        margin-bottom: 10px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        max-width: 600px;
+        margin: auto;
+      }
+
+      .section {
+        padding: 40px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .section h3 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+      }
+
+      .card img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+      }
+
+      .card h4 {
+        margin: 10px 0 5px;
+        font-size: 18px;
+      }
+
+      .card p {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .footer {
+        background-color: #282a35;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <h1>Edu Tech Academy</h1>
+      <ul>
+        <li><a href="/">HALAMAN UTAMA</a></li>
+        <li><a href="/quiz">QUIZ</a></li>
+        <li><a href="/mapel">MATA PELAJARAN</a></li>
+        <li><a href="/rangkuman">RANGKUMAN</a></li>
+      </ul>
+      <div class="login-btn">
+        <a href="/login">Login</a>
+        <span>👤</span>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h2>Belajar Jadi Lebih Mudah</h2>
+      <p>
+        Akses materi pembelajaran lengkap dan latihan soal interaktif bersama
+        Edu Tech Academy.
+      </p>
+    </div>
+
+    <!-- Fitur Utama -->
+    <div class="section">
+      <h3>Fitur Unggulan</h3>
+      <div class="cards">
+        <a href="/rangkuman" style="text-decoration: none; color: inherit">
+          <div class="card">
+            <img
+              src="https://img.icons8.com/ios/100/summary-list.png"
+              alt="Rangkuman"
+            />
+            <h4>Rangkuman</h4>
+            <p>Pelajari inti materi secara ringkas dan jelas.</p>
+          </div>
+        </a>
+        <a href="/mapel" style="text-decoration: none; color: inherit">
+          <div class="card">
+            <img
+              src="https://img.icons8.com/ios/100/000000/book.png"
+              alt="Materi Lengkap"
+            />
+            <h4>Mata Pelajaran</h4>
+            <p>Banyak pilihan mata pelajaran.</p>
+          </div>
+        </a>
+        <a href="/quiz" style="text-decoration: none; color: inherit">
+          <div class="card">
+            <img
+              src="https://img.icons8.com/ios/100/000000/checklist.png"
+              alt="Latihan Soal"
+            />
+            <h4>Latihan Soal</h4>
+            <p>Asah kemampuanmu lewat soal-soal pilihan.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        &copy; 2025 All Rights Reserved By Stella Amelia Sistem Informasi
+        Universitas Merdeka Malang
+      </p>
+    </div>
+  </body>
+</html>

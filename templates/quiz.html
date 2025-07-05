@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/static/logo.png" type="image/png" />
+    <title>Latihan Soal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f1f1f1;
+      }
+
+      .navbar {
+        background-color: #282a35;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar h1 {
+        margin: 0;
+        font-size: 22px;
+        color: #04aa6d;
+        font-weight: bold;
+      }
+
+      .navbar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+      }
+
+      .navbar li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+      }
+
+      .navbar li a:hover {
+        color: #04aa6d;
+      }
+
+      .login-btn a {
+        text-decoration: none;
+        background-color: #04aa6d;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .navbar span {
+        margin-left: 10px;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      h2,
+      h3 {
+        color: #444;
+      }
+
+      .question-box {
+        background-color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .question-box button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #e7e7e7;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 16px;
+      }
+
+      .question-box button:hover {
+        background-color: #d7d7d7;
+      }
+
+      .correct {
+        background-color: #4caf50 !important;
+        color: white;
+        font-weight: bold;
+      }
+
+      .wrong {
+        background-color: #f44336 !important;
+        color: white;
+        font-weight: bold;
+      }
+
+      .disabled {
+        cursor: not-allowed;
+      }
+
+      #score-box {
+        background-color: #fff;
+        padding: 20px;
+        margin: 30px 0;
+        border-radius: 5px;
+        border-left: 6px solid #04aa6d;
+        display: none;
+      }
+
+      #score-box h3 {
+        margin: 0;
+        color: #04aa6d;
+      }
+      .footer {
+        background-color: #282a35;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <h1>Edu Tech Academy</h1>
+      <ul>
+        <li><a href="/">HALAMAN UTAMA</a></li>
+        <li><a href="/quiz">QUIZ</a></li>
+        <li><a href="/mapel">MATA PELAJARAN</a></li>
+        <li><a href="/rangkuman">RANGKUMAN</a></li>
+      </ul>
+      <div class="login-btn">
+        <a href="/login">Login</a>
+        <span>👤</span>
+      </div>
+    </div>
+
+    <!-- Quiz Container -->
+    <div class="container">
+      <h2>Latihan Soal</h2>
+      <h3>Mata Pelajaran IPA</h3>
+
+      <!-- Soal-soal -->
+      <div class="question-box">
+        <p>
+          <b
+            >1. Zat yang tidak dapat diuraikan menjadi zat yang lebih sederhana
+            melalui reaksi kimia disebut...</b
+          >
+        </p>
+        <button onclick="checkAnswer(this, true)">Unsur</button>
+        <button onclick="checkAnswer(this, false)">Campuran</button>
+        <button onclick="checkAnswer(this, false)">Larutan</button>
+        <button onclick="checkAnswer(this, false)">Senyan</button>
+      </div>
+
+      <div class="question-box">
+        <p><b>2. Perubahan wujud dari gas menjadi cair disebut...</b></p>
+        <button onclick="checkAnswer(this, false)">Menguap</button>
+        <button onclick="checkAnswer(this, false)">Membeku</button>
+        <button onclick="checkAnswer(this, true)">Mengembun</button>
+        <button onclick="checkAnswer(this, false)">Menyublim</button>
+      </div>
+
+      <div class="question-box">
+        <p><b>3. Fungsi utama mitokondria dalam sel adalah...</b></p>
+        <button onclick="checkAnswer(this, false)">Sintesis protein</button>
+        <button onclick="checkAnswer(this, false)">Fotosintesis</button>
+        <button onclick="checkAnswer(this, true)">Respirasi sel</button>
+        <button onclick="checkAnswer(this, false)">Pencernaan zat</button>
+      </div>
+
+      <div class="question-box">
+        <p><b>4. Planet terdekat dengan Matahari adalah...</b></p>
+        <button onclick="checkAnswer(this, true)">Merkurius</button>
+        <button onclick="checkAnswer(this, false)">Venus</button>
+        <button onclick="checkAnswer(this, false)">Bumi</button>
+        <button onclick="checkAnswer(this, false)">Mars</button>
+      </div>
+
+      <div class="question-box">
+        <p><b>5. Alat ukur kuat arus listrik adalah...</b></p>
+        <button onclick="checkAnswer(this, false)">Voltmeter</button>
+        <button onclick="checkAnswer(this, false)">Ohmmeter</button>
+        <button onclick="checkAnswer(this, true)">Amperemeter</button>
+        <button onclick="checkAnswer(this, false)">Galvanometer</button>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <b
+            >6. Peristiwa perubahan energi dari cahaya menjadi kimia terjadi
+            pada proses...</b
+          >
+        </p>
+        <button onclick="checkAnswer(this, true)">Fotosintesis</button>
+        <button onclick="checkAnswer(this, false)">Respirasi</button>
+        <button onclick="checkAnswer(this, false)">Difusi</button>
+        <button onclick="checkAnswer(this, false)">Transpirasi</button>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <b>7. Gas yang paling banyak terdapat di atmosfer Bumi adalah...</b>
+        </p>
+        <button onclick="checkAnswer(this, true)">Nitrogen</button>
+        <button onclick="checkAnswer(this, false)">Oksigen</button>
+        <button onclick="checkAnswer(this, false)">Karbon dioksida</button>
+        <button onclick="checkAnswer(this, false)">Hidrogen</button>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <b
+            >8. Organ penyusun sistem pernapasan manusia yang berfungsi sebagai
+            tempat pertukaran gas adalah...</b
+          >
+        </p>
+        <button onclick="checkAnswer(this, false)">Trakea</button>
+        <button onclick="checkAnswer(this, true)">Alveolus</button>
+        <button onclick="checkAnswer(this, false)">Bronkus</button>
+        <button onclick="checkAnswer(this, false)">Laring</button>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <b
+            >9. Gaya yang bekerja pada benda yang diam dan tidak menyebabkan
+            gerakan disebut...</b
+          >
+        </p>
+        <button onclick="checkAnswer(this, false)">Gaya gesek</button>
+        <button onclick="checkAnswer(this, true)">Gaya seimbang</button>
+        <button onclick="checkAnswer(this, false)">Gaya gravitasi</button>
+        <button onclick="checkAnswer(this, false)">Gaya normal</button>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <b
+            >10. Proses perpindahan panas tanpa disertai perpindahan zat
+            disebut...</b
+          >
+        </p>
+        <button onclick="checkAnswer(this, true)">Radiasi</button>
+        <button onclick="checkAnswer(this, false)">Konveksi</button>
+        <button onclick="checkAnswer(this, false)">Kondensasi</button>
+        <button onclick="checkAnswer(this, false)">Evaporasi</button>
+      </div>
+
+      <!-- Skor akhir -->
+      <div id="score-box">
+        <h3 id="score-text"></h3>
+      </div>
+    </div>
+
+    <script>
+      let totalQuestions = 10;
+      let answeredQuestions = 0;
+      let score = 0;
+
+      function checkAnswer(button, isCorrect) {
+        if (isCorrect) {
+          button.classList.add("correct");
+          button.innerHTML += " ✓";
+          score++;
+        } else {
+          button.classList.add("wrong");
+          button.innerHTML += " ✗";
+        }
+
+        let parent = button.parentNode;
+        let buttons = parent.querySelectorAll("button");
+        buttons.forEach((btn) => {
+          btn.disabled = true;
+          btn.classList.add("disabled");
+        });
+
+        answeredQuestions++;
+        if (answeredQuestions === totalQuestions) {
+          showScore();
+        }
+      }
+
+      function showScore() {
+        const scoreBox = document.getElementById("score-box");
+        const scoreText = document.getElementById("score-text");
+        scoreText.innerText = `Skor Anda: ${score} dari ${totalQuestions} soal`;
+        scoreBox.style.display = "block";
+        window.scrollTo(0, document.body.scrollHeight);
+      }
+    </script>
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        &copy; 2025 All Rights Reserved By Stella Amelia Sistem Informasi
+        Universitas Merdeka Malang
+      </p>
+    </div>
+  </body>
+</html>
