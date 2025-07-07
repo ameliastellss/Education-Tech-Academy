@@ -14,7 +14,7 @@ def get_db_connection():
     return psycopg2.connect(db_url)
 
 # Halaman Utama
-@app.route('/')
+@app.route('/index')
 def home():
     return render_template('index.html')
 
@@ -44,7 +44,7 @@ def register():
     return render_template('register.html')
 
 # Halaman Login
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form['username']
