@@ -7,13 +7,16 @@ app.secret_key = 'secret'
 
 # Fungsi koneksi langsung ke PostgreSQL
 def get_db_connection():
-    conn = psycopg2.connect(
-        host=os.getenv('DB_HOST', 'db'),
-        database=os.getenv('DB_NAME', 'edu_web'),
-        user=os.getenv('DB_USER', 'postgres'),
-        password=os.getenv('DB_PASSWORD', 'password'),
-        port=os.getenv('DB_PORT', '5432')
-    )
+    import urllib.parse as up
+    import psycopg2
+    import os
+
+    db_url = os.getenv("DATABASE_URL")
+    if not db_url:
+        raise ValueError("DATABASE_URL environment variable not set.")
+
+    return psycopg2.connect(db_url)
+
     return conn
 
 # Halaman Utama
