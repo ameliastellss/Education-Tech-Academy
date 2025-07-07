@@ -8,16 +8,10 @@ app.secret_key = 'secret'
 # Fungsi koneksi langsung ke PostgreSQL
 def get_db_connection():
     import urllib.parse as up
-    import psycopg2
-    import os
-
     db_url = os.getenv("DATABASE_URL")
     if not db_url:
         raise ValueError("DATABASE_URL environment variable not set.")
-
     return psycopg2.connect(db_url)
-
-    return conn
 
 # Halaman Utama
 @app.route('/')
@@ -67,7 +61,7 @@ def login():
             session['user_id'] = user[0]
             session['username'] = user[1]
             flash("Login berhasil!", "success")
-            return redirect(url_for('/index.html'))
+            return redirect(url_for('home'))
         else:
             flash("Login gagal! Periksa kembali username atau password Anda.", "error")
 
@@ -104,7 +98,6 @@ def rangkuman():
         {"judul": "Rangkuman Medan Magnet", "nama_file": "Rangkuman Medan Magnet.pdf"},
         {"judul": "Rangkuman Sistem Pencernaan", "nama_file": "Rangkuman Sistem Pencernaan.pdf"},
         {"judul": "Rangkuman Sistem Peredaran Darah", "nama_file": "Rangkuman Sistem Peredaran Darah.pdf"},
-        
     ]
     return render_template("rangkuman.html", pdfs=pdf_list)
 
