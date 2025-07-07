@@ -67,7 +67,7 @@ def login():
             session['user_id'] = user[0]
             session['username'] = user[1]
             flash("Login berhasil!", "success")
-            return redirect(url_for('/inde.html'))
+            return redirect(url_for('/index.html'))
         else:
             flash("Login gagal! Periksa kembali username atau password Anda.", "error")
 
